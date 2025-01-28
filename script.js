@@ -7,8 +7,8 @@ function filtrarContenido(filtro) {
 
         // Mostrar todos los elementos si el filtro es "Todas"
         if (filtro === "Todas" ||
-            (filtro === "Reciente" && fecha >= "2025-01-10") ||
-            (filtro === "Antiguo" && fecha < "2025-01-09") ||
+            (filtro === "Reciente" && fecha >= "2025-01-23") ||
+            (filtro === "Antiguo" && fecha < "2025-01-22") ||
             (filtro === tipo)) {
             item.style.display = "block";
         } else {
