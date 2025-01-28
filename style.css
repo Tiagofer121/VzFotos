@@ -7,7 +7,7 @@
 }
 @font-face {
     font-family: 'TipoTiago';
-    src: url('CormorantGaramond-Regular.ttf') format('truetype');
+    src: url('Batangas-Bold.otf') format('truetype');
     font-weight: normal; /* Cambia a bold si tienes variantes */
     font-style: normal;  /* Cambia a italic si tienes variantes */
 }
@@ -76,7 +76,7 @@ svg.svg-camara {
 }
 .fotos-videos-botones {
     display: flex;
-    font-family:'TipoTiago-numero' ;
+    font-family:'TipoTiago' ;
 }
 a.Videos {
     display: flex
@@ -84,7 +84,7 @@ a.Videos {
     color: rgb(255, 255, 255);
     background: #1d1c1c;
     width: 60px;
-    align-items: end;
+    align-items: center;
     padding: 3px 0px;
     border-radius: 20px;
 }
@@ -224,8 +224,9 @@ img.poster-musica {
 }
 p.titulo-musica-p {
     margin: 0px 10px;
-    font-family: 'TipoTiago-numero';
+    font-family: 'TipoTiago';
     letter-spacing: 1px;
+    font-size: .8rem;
 }
 
 .play {
@@ -240,6 +241,9 @@ svg.Play, .Pause {
 }
 .Pause{
     display: none;
+}
+.filtrar-img-videos a:hover {
+    color: white;
 }
 /* Animación del spinner */
 @keyframes spin {
