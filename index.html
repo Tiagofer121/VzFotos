@@ -1,1 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>VzFotos</title>
+</head>
+<body>
+    <div class="perfil">
+        <div class="img-perfil-nombre">
+            <div class="fotos-videos-botones">
+                <a class="Fotos">
+                    <svg class="svg-camara" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 16 16" fill="none">
+                   <path fill-rule="evenodd" class="svg-iconos-video-camara" clip-rule="evenodd" d="M3 3H0V14H16V3H13L11 1H5L3 3ZM8 11C9.65685 11 11 9.65685 11 8C11 6.34315 9.65685 5 8 5C6.34315 5 5 6.34315 5 8C5 9.65685 6.34315 11 8 11Z" fill="#000000"/>
+                   </svg> 3</a>
+               <a  class="Videos"> <svg width="800px" class="svg-camara" height="800px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="svg-iconos-video-camara" d="M10 3H0V13H10V3Z" fill="#000000"/>
+                <path class="svg-iconos-video-camara" d="M15 3L12 6V10L15 13H16V3H15Z" fill="#000000"/>
+                </svg>0</a>
+            </div>
+            <div class="img-nombre">
+            <img src="Perfil.jpeg" alt="" class="imagen">
+                <h5 class="Nombre">Tiagoo</h5>
+</div>
 
+
+
+            <div class="informacion">
+                <h5 class="descripcion">Artesano De La photography</h5>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="filtrar-img-videos">
+        <a onclick="filtrarContenido('Todas')">Todas</a>
+        <a onclick="filtrarContenido('Reciente')">Reciente</a>
+        <a onclick="filtrarContenido('Antiguo')">Antiguo</a>
+        <a onclick="filtrarContenido('Fotos')">Fotos</a>
+        <a onclick="filtrarContenido('Videos')">Videos</a>
+    </div>
+    
+    <div id="contenido">
+        <div class="item" data-tipo="Fotos" data-fecha="2025-01-21">
+            <img src="1.png" data-imagen-grande="https://archive.org/download/2_20250128/1.webp" alt="">
+        </div>
+        <div class="item" data-tipo="Fotos" data-fecha="2025-01-24">
+            <img src="2.png" data-imagen-grande="https://archive.org/download/2_20250128/2.webp" alt="">
+        </div>
+        <div class="item" data-tipo="Fotos" data-fecha="2025-01-21">
+            <img src="3.png" data-imagen-grande="https://archive.org/download/2_20250128/3.webp" alt="">
+        </div>
+    </div>
+    
+    <div id="modal" class="modal">
+        <div class="loader"></div>
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img-grande" alt="">
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
