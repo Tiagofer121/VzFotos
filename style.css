@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    transition: 300ms;
+    outline: none;
+}
+@font-face {
+    font-family: 'TipoTiago';
+    src: url('CormorantGaramond-Regular.ttf') format('truetype');
+    font-weight: normal; /* Cambia a bold si tienes variantes */
+    font-style: normal;  /* Cambia a italic si tienes variantes */
+}
+@font-face {
+    font-family: 'TipoTiago-numero';
+    src: url('tipografiatiago-numero.otf') format('truetype');
+    font-weight: normal; /* Cambia a bold si tienes variantes */
+    font-style: normal;  /* Cambia a italic si tienes variantes */
+}
+body{
+    background-color: rgb(21 18 18)
+}
+.perfil {
+    width: 100%;
+    height: 500px;
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+}
+.img-perfil-nombre {
+    color: white;
+    width: 550px;
+    height: 350px;
+    padding: 20px;
+    background: #00000017;
+    border-radius: 20px;
+    margin: 10px;
+    border: 1px solid #ffffff17;
+}
+.img-nombre {
+    justify-content: center;
+    display: grid;
+    margin: 0px 0px 20px;
+}
+img.imagen {
+    width: 140px;
+    height: 140px;
+    margin: 20px 0px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+h5.Nombre {
+    text-align: center;
+    font-family: 'TipoTiago-numero';
+    font-size: 1.2rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+a.Fotos {
+    display: flex
+;
+    color: rgb(255, 255, 255);
+    background: #1d1c1c;
+    width: 60px;
+    align-items: end;
+    padding: 3px 0px;
+    border-radius: 20px;
+    margin: 0px 10px 0px 0px;
+}
+svg.svg-camara {
+    width: 20px;
+    height: 20px;
+    margin: 0px 5px 0px 10px;
+}
+.fotos-videos-botones {
+    display: flex;
+    font-family:'TipoTiago-numero' ;
+}
+a.Videos {
+    display: flex
+;
+    color: rgb(255, 255, 255);
+    background: #1d1c1c;
+    width: 60px;
+    align-items: end;
+    padding: 3px 0px;
+    border-radius: 20px;
+}
+h5.descripcion {
+    margin: 60px 0px 0px 0px;
+    font-family: 'Tipotiago';
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    color: #ffffff4a;
+    font-weight: 900;
+}
+.svg-iconos-video-camara{
+    fill: white;
+}
+.filtrar-img-videos {
+    display: flex;
+    width: 70%;
+    margin: 0px 15%;
+    height: 40px;
+    background: #131010;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    color: #777777;
+    justify-content: space-between;
+    font-family: 'TipoTiago';
+    font-weight: 900;
+    border: 1px solid rgb(255 255 255 / 5%);
+}
+.filtrar-img-videos a {
+    margin: 0px 10px;
+    cursor: pointer;
+}
+div#contenido {
+    width: 95%;
+    margin: 50px 2.5% 0px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.item {
+    width: 100%;
+    height: auto;
+}
+.item img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+button, a, input {
+    outline: none;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0; /* Ocupa todo el viewport */
+    background-color: rgba(0, 0, 0, 0.95); /* Fondo negro casi opaco */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra ligera */
+    animation: fadeIn 0.3s ease-in-out; /* Animación de entrada */
+}
+
+.close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    line-height: 1;
+    transition: background 0.2s ease;
+}
+
+.close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Indicador de carga */
+.loader {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    border-top: 6px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Animación del spinner */
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@media (min-width: 1200px) {
+    div#contenido {
+      grid-template-columns: repeat(6, 1fr); /* 6 imágenes por fila en pantallas grandes */
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1199px) {
+    div#contenido {
+      grid-template-columns: repeat(4, 1fr); /* 4 imágenes por fila en pantallas medianas */
+    }
+  }
+  
+  @media (max-width: 767px) {
+    div#contenido {
+      grid-template-columns: repeat(3, 1fr); /* 2 imágenes por fila en pantallas pequeñas */
+    }
+  }
+  @media (max-width: 500px) {
+    div#contenido {
+      grid-template-columns: repeat(2, 1fr); /* 2 imágenes por fila en pantallas pequeñas */
+    }
+  
+    .filtrar-img-videos a {
+        cursor: pointer;
+    }
+    .filtrar-img-videos {
+        display: flex;
+        width: 90%;
+        margin: 0px 5%;
+        height: 40px;
+        background: #131010;
+        align-items: center;
+        padding: 20px;
+        border-radius: 10px;
+        color: #777777;
+        justify-content: space-between;
+        font-family: 'TipoTiago';
+        font-weight: 900;
+        border: 1px solid rgb(255 255 255 / 5%);
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .perfil {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+  }
