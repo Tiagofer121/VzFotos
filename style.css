@@ -27,6 +27,7 @@ body{
 ;
     justify-content: center;
     align-items: center;
+    margin-bottom: -50px;
 }
 .img-perfil-nombre {
     color: white;
@@ -101,7 +102,7 @@ h5.descripcion {
 .filtrar-img-videos {
     display: flex;
     width: 70%;
-    margin: 0px 15%;
+    margin: 20px 15% 0px;
     height: 40px;
     background: #131010;
     align-items: center;
@@ -189,6 +190,57 @@ button, a, input {
     animation: spin 1s linear infinite;
 }
 
+.musica {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.musica-contenedor {
+    width: 550px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 15px;
+    background: linear-gradient(139deg, #686460, #1f1e21);
+    margin: 0px 10px;
+    justify-content: space-between;
+}
+
+img.poster-musica {
+    width: 55px;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.foto-perfil-musica {
+    width: 70%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+p.titulo-musica-p {
+    margin: 0px 10px;
+    font-family: 'TipoTiago-numero';
+    letter-spacing: 1px;
+}
+
+.play {
+    margin: 0px 10px 0px 0px;
+}
+svg.Play, .Pause {
+    width: 20px;
+    height: 20px;
+}
+.play path , .Pause path{
+    fill: white;
+}
+.Pause{
+    display: none;
+}
 /* Animación del spinner */
 @keyframes spin {
     from {
@@ -222,11 +274,18 @@ button, a, input {
     }
   }
   
-  @media (max-width: 767px) {
+  @media (max-width: 932px) {
     div#contenido {
       grid-template-columns: repeat(3, 1fr); /* 2 imágenes por fila en pantallas pequeñas */
     }
   }
+
+  @media (max-width: 652px) {
+    div#contenido {
+      grid-template-columns: repeat(2, 1fr); /* 2 imágenes por fila en pantallas pequeñas */
+    }
+  }
+
   @media (max-width: 500px) {
     div#contenido {
       grid-template-columns: repeat(2, 1fr); /* 2 imágenes por fila en pantallas pequeñas */
@@ -236,9 +295,10 @@ button, a, input {
         cursor: pointer;
     }
     .filtrar-img-videos {
-        display: flex;
+        display: flex
+;
         width: 90%;
-        margin: 0px 5%;
+        margin: 30px 5%;
         height: 40px;
         background: #131010;
         align-items: center;
@@ -258,5 +318,18 @@ button, a, input {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
+    .musica-contenedor {
+        width: 350px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        color: white;
+        padding: 5px 5px;
+        border-radius: 15px;
+        background: linear-gradient(139deg, #686460, #1f1e21);
+        margin: 0px 10px;
     }
   }
