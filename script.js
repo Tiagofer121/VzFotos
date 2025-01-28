@@ -52,3 +52,24 @@ modal.addEventListener("click", (e) => {
         modalImg.src = ""; // Limpiar la imagen
     }
 });
+
+  // Cargar la música
+  const audio = new Audio("Welcome-To-Jamrock.mp3"); // Cambia "ruta_de_tu_musica.mp3" por el archivo de tu música.
+
+  // Seleccionar botones
+  const playButton = document.querySelector(".Play");
+  const pauseButton = document.querySelector(".Pause");
+
+  // Evento para el botón de reproducir
+  playButton.addEventListener("click", () => {
+    audio.play(); // Reproducir la música
+    playButton.style.display = "none"; // Ocultar el botón de reproducir
+    pauseButton.style.display = "inline-block"; // Mostrar el botón de pausar
+  });
+
+  // Evento para el botón de pausar
+  pauseButton.addEventListener("click", () => {
+    audio.pause(); // Pausar la música
+    pauseButton.style.display = "none"; // Ocultar el botón de pausar
+    playButton.style.display = "inline-block"; // Mostrar el botón de reproducir
+  });
