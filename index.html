@@ -219,7 +219,7 @@ button, a, input {
     color: white;
     padding: 5px 5px;
     border-radius: 15px;
-    background: linear-gradient(183deg, #e94524, #0f1123);
+    background: linear-gradient(183deg, #e945248c, #0f1123);
     margin: 0px 10px;
     justify-content: space-between;
 }
@@ -299,7 +299,7 @@ fill: white;
 }
 @media (min-width: 1200px) {
     div#contenido {
-      grid-template-columns: repeat(6, 1fr); /* 6 imágenes por fila en pantallas grandes */
+      grid-template-columns: repeat(5, 1fr); /* 6 imágenes por fila en pantallas grandes */
     }
   }
   
@@ -437,6 +437,7 @@ fill: white;
     </div>
     </div>
 
+
     <div class="filtrar-img-videos">
         <a onclick="filtrarContenido('Todas')">Todas</a>
         <a onclick="filtrarContenido('Reciente')">Reciente</a>
@@ -446,6 +447,12 @@ fill: white;
     </div>
     
     <div id="contenido">
+        <div class="item" data-tipo="Fotos" data-fecha="2025-01-29">
+            <svg class="vertical" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4C6 3.44772 6.44772 3 7 3H17C17.5523 3 18 3.44772 18 4V18C18 18.5523 17.5523 19 17 19H7C6.44772 19 6 18.5523 6 18V4ZM7 1C5.34315 1 4 2.34315 4 4V20C4 21.6569 5.34315 23 7 23H17C18.6569 23 20 21.6569 20 20V4C20 2.34315 18.6569 1 17 1H7ZM12 22C12.5523 22 13 21.5523 13 21C13 20.4477 12.5523 20 12 20C11.4477 20 11 20.4477 11 21C11 21.5523 11.4477 22 12 22Z" fill="#000000"/>
+                </svg>
+            <img loading="lazy" src="7.png" data-imagen-grande="7.webp" alt="">
+        </div>
         <div class="item" data-tipo="Fotos" data-fecha="2025-01-24">
             <svg class="vertical" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4C6 3.44772 6.44772 3 7 3H17C17.5523 3 18 3.44772 18 4V18C18 18.5523 17.5523 19 17 19H7C6.44772 19 6 18.5523 6 18V4ZM7 1C5.34315 1 4 2.34315 4 4V20C4 21.6569 5.34315 23 7 23H17C18.6569 23 20 21.6569 20 20V4C20 2.34315 18.6569 1 17 1H7ZM12 22C12.5523 22 13 21.5523 13 21C13 20.4477 12.5523 20 12 20C11.4477 20 11 20.4477 11 21C11 21.5523 11.4477 22 12 22Z" fill="#000000"/>
@@ -493,6 +500,10 @@ fill: white;
 
 </body>
 
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+
+
 <script>
     function filtrarContenido(filtro) {
     const items = document.querySelectorAll("#contenido .item");
@@ -512,13 +523,11 @@ fill: white;
         }
     });
 }
-// Seleccionar elementos
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("img-grande");
 const closeModal = document.querySelector(".close");
 const loader = document.querySelector(".loader");
 
-// Abrir modal al hacer clic en la imagen
 document.querySelectorAll("#contenido .item img").forEach((img) => {
     img.addEventListener("click", () => {
         const imagenGrande = img.getAttribute("data-imagen-grande");
@@ -535,13 +544,11 @@ document.querySelectorAll("#contenido .item img").forEach((img) => {
     });
 });
 
-// Cerrar el modal
 closeModal.addEventListener("click", () => {
     modal.style.display = "none";
     modalImg.src = ""; // Limpiar la imagen para evitar errores
 });
 
-// Cerrar el modal al hacer clic fuera de la imagen
 modal.addEventListener("click", (e) => {
     if (e.target === modal) {
         modal.style.display = "none";
@@ -549,21 +556,17 @@ modal.addEventListener("click", (e) => {
     }
 });
 
-  // Cargar la música
-  const audio = new Audio("TRELLAS.mp3"); // Cambia "ruta_de_tu_musica.mp3" por el archivo de tu música.
+  const audio = new Audio("TRELLAS.mp3");"ruta_de_tu_musica.mp3"
 
-  // Seleccionar botones
   const playButton = document.querySelector(".Play");
   const pauseButton = document.querySelector(".Pause");
 
-  // Evento para el botón de reproducir
   playButton.addEventListener("click", () => {
     audio.play(); // Reproducir la música
     playButton.style.display = "none"; // Ocultar el botón de reproducir
     pauseButton.style.display = "inline-block"; // Mostrar el botón de pausar
   });
 
-  // Evento para el botón de pausar
   pauseButton.addEventListener("click", () => {
     audio.pause(); // Pausar la música
     pauseButton.style.display = "none"; // Ocultar el botón de pausar
