@@ -208,7 +208,7 @@ button, a, input {
     color: white;
     padding: 5px 5px;
     border-radius: 15px;
-    background: linear-gradient(139deg, #686460, #1f1e21);
+    background: linear-gradient(135deg, #06648b, #091628);
     margin: 0px 10px;
     justify-content: space-between;
 }
@@ -344,7 +344,6 @@ fill: white;
         color: white;
         padding: 5px 5px;
         border-radius: 15px;
-        background: linear-gradient(139deg, #686460, #1f1e21);
         margin: 0px 10px;
     }
   }
