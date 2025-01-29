@@ -54,7 +54,7 @@ modal.addEventListener("click", (e) => {
 });
 
   // Cargar la música
-  const audio = new Audio("Welcome-To-Jamrock.mp3"); // Cambia "ruta_de_tu_musica.mp3" por el archivo de tu música.
+  const audio = new Audio("corazon.mp3"); // Cambia "ruta_de_tu_musica.mp3" por el archivo de tu música.
 
   // Seleccionar botones
   const playButton = document.querySelector(".Play");
