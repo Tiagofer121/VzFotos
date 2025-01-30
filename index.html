@@ -63,8 +63,8 @@ h5.Nombre {
     text-align: center;
     font-family: 'TipoTiago-numero';
     font-size: 1.2rem;
-    font-weight: 100;
-    letter-spacing: 1px;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 a.Fotos {
     display: flex
@@ -132,7 +132,7 @@ span.Photo {
 }
 div#contenido {
     width: 95%;
-    margin: 30px 2.5% 0px;
+    margin: 50px 2.5% 0px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 }
@@ -219,7 +219,7 @@ button, a, input {
     color: white;
     padding: 5px 5px;
     border-radius: 15px;
-    background: linear-gradient(114deg, #1e1e1e, #050505);
+    background: linear-gradient(114deg, #a81113, #084c51);
     margin: 0px 10px;
     justify-content: space-between;
 }
@@ -233,7 +233,7 @@ button, a, input {
     color: white;
     padding: 5px 5px;
     border-radius: 10px;
-    background: linear-gradient(14deg, #1e1e1e, #050505);
+    background: linear-gradient(14deg, #a81113, #084c51);
     margin: 10px 10px;
     justify-content: space-between;
 }
@@ -259,6 +259,8 @@ p.titulo-musica-p {
     letter-spacing: 1px;
     font-size: .6rem;
     margin: 0px 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 .foto-perfil-musica div {
     margin: 0px 10px;
@@ -397,7 +399,6 @@ fill: white;
     color: white;
     padding: 5px 5px;
     border-radius: 10px;
-    background: linear-gradient(14deg, #527511, #124613);
     margin: 10px 10px;
     justify-content: space-between;
 }
@@ -456,10 +457,10 @@ fill: white;
     <div class="musica">
         <div class="musica-contenedor">
         <div class="foto-perfil-musica">
-            <img src="https://lastfm.freetls.fastly.net/i/u/500x500/e90b70f7b011bfe24daefd4cc123ec0f.jpg" alt="" class="poster-musica">
+            <img src="https://t2.genius.com/unsafe/412x412/https%3A%2F%2Fimages.genius.com%2Fab04f56bd83f4817f19fb183a3be5762.578x578x1.jpg" alt="" class="poster-musica">
            <div>
-            <p class="titulo-musica-p">Estamos Bien</p>
-                <p class="cantante">Bad Bunny <span class="album">-  X100Pre</span></p>
+            <p class="titulo-musica-p">Nena</p>
+                <p class="cantante">Zaramay <span class="album">-  Perfume Para Pulmones</span></p>
             </div>
         </div>
         <div class="play">
@@ -476,8 +477,7 @@ fill: white;
 
     <div class="musica">
         <div class="Letra-contenedor">
-            <p class="letras-p">estamos bien, está todo bien, ey
-                To's los míos están bien, 'tamos bien, ey</p>
+            <p class="letras-p">a ti pa' ser mujer no te hacen falta tacos</p>
     </div>
     </div>
 
@@ -593,7 +593,7 @@ modal.addEventListener("click", (e) => {
     }
 });
 
-  const audio = new Audio("EstamosBien.mp3");"ruta_de_tu_musica.mp3"
+  const audio = new Audio("Nena.mp3");"ruta_de_tu_musica.mp3"
 
   const playButton = document.querySelector(".Play");
   const pauseButton = document.querySelector(".Pause");
