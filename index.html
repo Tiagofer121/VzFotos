@@ -224,6 +224,19 @@ button, a, input {
     justify-content: space-between;
 }
 
+.Letra-contenedor {
+    width: 550px;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 10px;
+    background: linear-gradient(14deg, #527511, #124613);
+    margin: 10px 10px;
+    justify-content: space-between;
+}
 img.poster-musica {
     width: 55px;
     height: 100%;
@@ -241,7 +254,12 @@ p.titulo-musica-p {
     letter-spacing: 1px;
     font-size: .8rem;
 }
-
+.letras-p {
+    font-family: 'TipoTiago-Numero';
+    letter-spacing: 1px;
+    font-size: .6rem;
+    margin: 0px 10px;
+}
 .foto-perfil-musica div {
     margin: 0px 10px;
 }
@@ -370,7 +388,21 @@ fill: white;
         border-radius: 15px;
         margin: 0px 10px;
     }
+    .Letra-contenedor {
+    width: 350px;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 10px;
+    background: linear-gradient(14deg, #527511, #124613);
+    margin: 10px 10px;
+    justify-content: space-between;
+}
   }
+
 
   @media (max-width: 367px) {
     .filtrar-img-videos {
@@ -442,6 +474,13 @@ fill: white;
     </div>
     </div>
 
+    <div class="musica">
+        <div class="Letra-contenedor">
+            <p class="letras-p">Si te quieres divertir
+                Con encanto y con primor
+                Solo tienes que vivir</p>
+    </div>
+    </div>
 
     <div class="filtrar-img-videos">
         <a onclick="filtrarContenido('Todas')">Todas</a>
