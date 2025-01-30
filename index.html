@@ -219,7 +219,7 @@ button, a, input {
     color: white;
     padding: 5px 5px;
     border-radius: 15px;
-    background: linear-gradient(183deg, #e945248c, #0f1123);
+    background: linear-gradient(114deg, #527511, #124613);
     margin: 0px 10px;
     justify-content: space-between;
 }
@@ -248,9 +248,14 @@ p.titulo-musica-p {
 p.cantante {
     font-size: .4rem;
     font-family: 'TipoTiago';
-    color: #ffffff78;
+    color: #ffffff;
+    position: absolute;
+    margin: 7px 0px 0px;
 }
+.album{
+    color: #ffffff78;
 
+}
 .play {
     margin: 0px 10px 0px 0px;
 }
@@ -419,10 +424,10 @@ fill: white;
     <div class="musica">
         <div class="musica-contenedor">
         <div class="foto-perfil-musica">
-            <img src="https://lastfm.freetls.fastly.net/i/u/770x0/0917cce98da0408a73cb7f0d0061a340.jpg#0917cce98da0408a73cb7f0d0061a340" alt="" class="poster-musica">
+            <img src="https://lastfm.freetls.fastly.net/i/u/500x500/7a153e85efac1407a2811268011050e7.jpg" alt="" class="poster-musica">
            <div>
-            <p class="titulo-musica-p">TRELLAS</p>
-                <p class="cantante">Bad Bunny</p>
+            <p class="titulo-musica-p">NUEVAYol</p>
+                <p class="cantante"><span class="album">DeBÍ TiRAR MáS FOToS - </span>Bad Bunny</p>
             </div>
         </div>
         <div class="play">
@@ -550,7 +555,7 @@ modal.addEventListener("click", (e) => {
     }
 });
 
-  const audio = new Audio("TRELLAS.mp3");"ruta_de_tu_musica.mp3"
+  const audio = new Audio("NUEVAYol.mp3");"ruta_de_tu_musica.mp3"
 
   const playButton = document.querySelector(".Play");
   const pauseButton = document.querySelector(".Pause");
