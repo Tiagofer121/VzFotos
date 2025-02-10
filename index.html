@@ -1,126 +1,615 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Libro Abierto</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <title>VzFotos</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f5a5d2e6;
-            font-family: Arial, sans-serif;
-        }
-        .libro {
-            width: 900px;
-            height: 80%;
-            display: flex;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 20px;
-        }
-        .hoja {
-            flex: 1;
-            padding: 20px;
-            box-sizing: border-box;
-            background-color: #ff24a05d;
-        }
-        .hoja.izquierda {
-            border-right: 1px solid #000000;
-            border-top-left-radius: 20px;
-            border-bottom-left-radius: 20px;
-            overflow: hidden;
-
-        }
-        .hoja.derecha {
-            border-left: 1px solid #000000;
-            border-top-right-radius: 20px;
-            border-bottom-right-radius: 20px;
-            overflow: hidden;
-
-        }
-        .hoja.izquierda p,.hoja.hoja.derecha p {
-    letter-spacing: 2px;
-    color: white;
-    width: 95%;
-    overflow-y: auto;
-    text-align: justify;
-    font-family: "Cinzel", serif;
-
+        *{
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    transition: 300ms;
+    outline: none;
 }
-p span {
-    font-size: 2rem;
-    font-family: "Cedarville Cursive", serif;
+@font-face {
+    font-family: 'TipoTiago';
+    src: url('Batangas-Bold.otf') format('truetype');
+    font-weight: normal; /* Cambia a bold si tienes variantes */
+    font-style: normal;  /* Cambia a italic si tienes variantes */
 }
-.texto-p {
+@font-face {
+    font-family: 'TipoTiago-numero';
+    src: url('tipografiatiago-numero.otf') format('truetype');
+    font-weight: normal; /* Cambia a bold si tienes variantes */
+    font-style: normal;  /* Cambia a italic si tienes variantes */
+}
+body{
+    background-color: rgb(21 18 18)
+}
+.perfil {
     width: 100%;
-    height: 80%;
-    overflow-y: auto;
-}
-
-.fotos {
-    width: 100%;
-    height: fit-content;
-}
-
-.fotos img {
-    width: 48%;
-    border-radius: 10px;
-    max-height: 150px;
-    object-fit: cover;
-    margin: 0px .5%;
-
-}
-.fotos {
-    width: 100%;
-    height: fit-content;
-    margin: 0px 0px 30px;
+    height: 500px;
     display: flex
 ;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -50px;
 }
-h1{
-    font-family: "Cedarville Cursive", serif;
-    margin: 0px;
-   font-weight: 100;
+.img-perfil-nombre {
+    color: white;
+    width: 550px;
+    height: 350px;
+    padding: 20px;
+    background: #00000017;
+    border-radius: 20px;
+    margin: 10px;
+    border: 1px solid #ffffff17;
+}
+.img-nombre {
+    justify-content: center;
+    display: grid;
+    margin: 0px 0px 20px;
+}
+img.imagen {
+    width: 140px;
+    height: 140px;
+    margin: 20px 0px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+h5.Nombre {
+    text-align: center;
+    font-family: 'TipoTiago-numero';
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+a.Fotos {
+    display: flex
+;
+    color: rgb(255, 255, 255);
+    background: #1d1c1c;
+    width: 60px;
+    align-items: center;
+    padding: 3px 0px;
+    border-radius: 20px;
+    margin: 0px 10px 0px 0px;
+}
+svg.svg-camara {
+    width: 20px;
+    height: 20px;
+    margin: 0px 5px 0px 10px;
+}
+.fotos-videos-botones {
+    display: flex;
+    font-family:'TipoTiago' ;
+}
+a.Videos {
+    display: flex
+;
+    color: rgb(255, 255, 255);
+    background: #1d1c1c;
+    width: 60px;
+    align-items: center;
+    padding: 3px 0px;
+    border-radius: 20px;
+}
+h5.descripcion {
+    margin: 60px 0px 0px 0px;
+    font-family: 'Tipotiago';
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    color: #ffffff4a;
+    font-weight: 900;
+}
+span.Photo {
+    color: white;
+}
+.svg-iconos-video-camara{
+    fill: white;
+}
+.filtrar-img-videos {
+    display: flex;
+    width: 70%;
+    margin: 20px 15% 0px;
+    height: 40px;
+    background: #131010;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    color: #777777;
+    justify-content: space-between;
+    font-family: 'TipoTiago';
+    font-weight: 100;
+    border: 1px solid rgb(255 255 255 / 5%);
+    font-size: 0.8rem;
+}
+.filtrar-img-videos a {
+    margin: 0px 10px;
+    cursor: pointer;
+}
+div#contenido {
+    width: 95%;
+    margin: 50px 2.5% 0px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.item {
+    width: 100%;
+    height: auto;
+}
+.item img {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    object-fit: cover;
+
+}
+button, a, input {
+    outline: none;
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    inset: 0; /* Ocupa todo el viewport */
+    background-color: rgba(0, 0, 0, 0.95); /* Fondo negro casi opaco */
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra ligera */
+    animation: fadeIn 0.3s ease-in-out; /* Animación de entrada */
+}
+
+.close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 50%;
+    line-height: 1;
+    transition: background 0.2s ease;
+}
+
+.close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Indicador de carga */
+.loader {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    border-top: 6px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.musica {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.musica-contenedor {
+    width: 550px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 15px;
+    background: linear-gradient(114deg, #b2aea2, #151212);
+    margin: 0px 10px;
+    justify-content: space-between;
+}
+
+.Letra-contenedor {
+    width: 550px;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 10px;
+    background: linear-gradient(14deg, #00215e, #00081c);
+    margin: 10px 10px;
+    justify-content: space-between;
+    display: none;
+}
+img.poster-musica {
+    width: 55px;
+    height: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+.foto-perfil-musica {
+    width: 70%;
+    height: 55px;
+    display: flex;
+    align-items: center;
+}
+p.titulo-musica-p {
+    font-family: 'TipoTiago';
+    letter-spacing: 1px;
+    font-size: .8rem;
+}
+.letras-p {
+    font-family: 'TipoTiago-Numero';
+    letter-spacing: 1px;
+    font-size: .6rem;
+    margin: 0px 10px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+.foto-perfil-musica div {
+    margin: 0px 10px;
+}
+p.cantante {
+    font-size: .4rem;
+    font-family: 'TipoTiago';
+    color: #ffffff;
+    position: absolute;
+    margin: 7px 0px 0px;
+}
+.album{
+    color: #ffffff78;
+
+}
+.play {
+    margin: 0px 10px 0px 0px;
+}
+svg.Play, .Pause {
+    width: 20px;
+    height: 20px;
+}
+.play path , .Pause path{
+    fill: white;
+}
+.Pause{
+    display: none;
+}
+.filtrar-img-videos a:hover {
+    color: white;
+}
+svg.Horizontal , svg.vertical {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    margin: 15px;
+}
+svg.Horizontal path , svg.vertical path {
+fill: white;
+}
+/* Animación del spinner */
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@media (min-width: 1200px) {
+    div#contenido {
+      grid-template-columns: repeat(5, 1fr); /* 6 imágenes por fila en pantallas grandes */
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 1199px) {
+    div#contenido {
+      grid-template-columns: repeat(4, 1fr); /* 4 imágenes por fila en pantallas medianas */
+    }
+  }
+  
+  @media (max-width: 932px) {
+    div#contenido {
+      grid-template-columns: repeat(3, 1fr); /* 2 imágenes por fila en pantallas pequeñas */
+    }
+  }
+
+  @media (max-width: 652px) {
+    div#contenido {
+      grid-template-columns: repeat(2, 1fr); /* 2 imágenes por fila en pantallas pequeñas */
+    }
+    .filtrar-img-videos {
+        display: flex;
+        width: 90%;
+        margin: 30px 5%;
+        height: 40px;
+        background: #131010;
+        align-items: center;
+        padding: 20px;
+        border-radius: 10px;
+        color: #777777;
+        justify-content: space-between;
+        font-family: 'TipoTiago';
+        font-weight: 900;
+        border: 1px solid rgb(255 255 255 / 5%);
+
+    }
+  }
+
+  @media (max-width: 500px) {
+    div#contenido {
+      grid-template-columns: repeat(2, 1fr); /* 2 imágenes por fila en pantallas pequeñas */
+    }
+  
+    .filtrar-img-videos a {
+        cursor: pointer;
+    }
+
+    .perfil {
+        width: 100%;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
+    .musica-contenedor {
+        width: 350px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        color: white;
+        padding: 5px 5px;
+        border-radius: 15px;
+        margin: 0px 10px;
+    }
+    .Letra-contenedor {
+    width: 350px;
+    height: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 10px;
+    margin: 10px 10px;
+    justify-content: space-between;
+}
+  }
+
+
+  @media (max-width: 367px) {
+    .filtrar-img-videos {
+        display: flex;
+        width: 90%;
+        margin: 30px 5%;
+        height: 40px;
+        background: #131010;
+        align-items: center;
+        padding: 20px;
+        border-radius: 10px;
+        color: #777777;
+        justify-content: space-between;
+        font-family: 'TipoTiago';
+        font-weight: 900;
+        border: 1px solid rgb(255 255 255 / 5%);
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
 }
 
     </style>
 </head>
 <body>
-    <div class="libro">
-        <div class="hoja izquierda">
-            <h1>TE AMO</h1>
-            <div class="texto-p">
-            <p>Solo quería decirte que sos lo mejor que me pasó en la vida, Desde que te conocí cada día es más lindo y más divertido, Estar con vos es lo mejor que hay, me hacés sentir en casa sin importar dónde estemos Me encanta cómo me mirás, cómo te reís de mis chistes malos y cómo siempre encontrás la forma de hacerme sentir especial
-
-                Me enamoro más de ti cada día, de tu forma de ser, de la manera en que ves el mundo, de cómo hacés que hasta los días más aburridos sean especiales, Sos la <span>Mejor del mundo</span></p>
-                <div class="fotos">
-                    <img src="1-1.jpg" alt="">
-                    <img src="2-2.jpg" alt="">
-
-                </div>
-                <p><span>S</span>iempre voy a estar para vos, en todo, en los momentos buenos y en los no tan buenos</p>
-                <div class="fotos">
-                    <img src="3-3.jpg" alt="">
-                    <img src="4-4.jpg" alt="">
-
-                </div>
-                <p><span>L</span>amento todo el daño que te Hice, Quiero que sepas que ahora no hablo con nadie más que con <span>Vos</span>, porque sos lo único que realmente me importa.</p>
+    <div class="perfil">
+        <div class="img-perfil-nombre">
+            <div class="fotos-videos-botones">
+                <a class="Fotos">
+                    <svg class="svg-camara" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 16 16" fill="none">
+                   <path fill-rule="evenodd" class="svg-iconos-video-camara" clip-rule="evenodd" d="M3 3H0V14H16V3H13L11 1H5L3 3ZM8 11C9.65685 11 11 9.65685 11 8C11 6.34315 9.65685 5 8 5C6.34315 5 5 6.34315 5 8C5 9.65685 6.34315 11 8 11Z" fill="#000000"/>
+                   </svg> 6</a>
+               <a  class="Videos"> <svg width="800px" class="svg-camara" height="800px" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="svg-iconos-video-camara" d="M10 3H0V13H10V3Z" fill="#000000"/>
+                <path class="svg-iconos-video-camara" d="M15 3L12 6V10L15 13H16V3H15Z" fill="#000000"/>
+                </svg>0</a>
             </div>
-            </div>
-        <div class="hoja derecha">
-            <h1>SOS LA MEJOR</h1>
-            <div class="texto-p">
-               <p>Me siento muy mal por lo que estás pasando sé que este momento es muy difícil y quiero que sepas que estoy acá para ti para lo que necesites ya sea para hablar o para estar juntos,
+            <div class="img-nombre">
+            <img src="Perfil.jpeg" alt="" class="imagen">
+                <h5 class="Nombre">Tiagoo</h5>
+</div>
 
-                No te voy a decir que todo va a estar bien porque sé que no es fácil, pero lo que sí te puedo prometer es que voy a estar a tu lado siempre apoyándote en todo lo que necesites. No estás sola en esto, y aunque a veces las palabras no alcancen quiero que sepas que siempre vas a poder contar conmigo en cada momento
-                
-                Te amo con todo mi corazón y siempre voy a estar para ti en lo que sea que necesites, en los días más difíciles y en los mas lindos, Te admiro mucho por fuerza que tenés, y quiero que sepas que estoy acá para lo que necesites</p> 
-             </div>
+
+
+            <div class="informacion">
+                <h5 class="descripcion">Artesano De La <span class="Photo">photo</span>graphy</h5>
+            </div>
+        </div>
+
     </div>
+
+    <div class="musica">
+        <div class="musica-contenedor">
+        <div class="foto-perfil-musica">
+            <img src="https://t2.genius.com/unsafe/412x412/https%3A%2F%2Fimages.genius.com%2F98635c01146e2c911b8f4cfbd3361e1a.1000x1000x1.png" alt="" class="poster-musica">
+           <div>
+            <p class="titulo-musica-p">Beanie</p>
+                <p class="cantante">Chezile <span class="album">-  47 </span></p>
+            </div>
+        </div>
+        <div class="play">
+            <svg class="Play" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                <path d="M21.4086 9.35258C23.5305 10.5065 23.5305 13.4935 21.4086 14.6474L8.59662 21.6145C6.53435 22.736 4 21.2763 4 18.9671L4 5.0329C4 2.72368 6.53435 1.26402 8.59661 2.38548L21.4086 9.35258Z" fill="#1C274C"/>
+                </svg>
+                <svg class="Pause" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                    <path d="M2 6C2 4.11438 2 3.17157 2.58579 2.58579C3.17157 2 4.11438 2 6 2C7.88562 2 8.82843 2 9.41421 2.58579C10 3.17157 10 4.11438 10 6V18C10 19.8856 10 20.8284 9.41421 21.4142C8.82843 22 7.88562 22 6 22C4.11438 22 3.17157 22 2.58579 21.4142C2 20.8284 2 19.8856 2 18V6Z" fill="#1C274C"/>
+                    <path d="M14 6C14 4.11438 14 3.17157 14.5858 2.58579C15.1716 2 16.1144 2 18 2C19.8856 2 20.8284 2 21.4142 2.58579C22 3.17157 22 4.11438 22 6V18C22 19.8856 22 20.8284 21.4142 21.4142C20.8284 22 19.8856 22 18 22C16.1144 22 15.1716 22 14.5858 21.4142C14 20.8284 14 19.8856 14 18V6Z" fill="#1C274C"/>
+                    </svg>
+        </div>
+    </div>
+    </div>
+
+    <div class="musica">
+        <div class="Letra-contenedor">
+            <p class="letras-p">Te perdí a ti y perdí mi alma</p>
+    </div>
+    </div>
+
+    <div class="filtrar-img-videos">
+        <a onclick="filtrarContenido('Todas')">Todas</a>
+        <a onclick="filtrarContenido('Reciente')">Reciente</a>
+        <a onclick="filtrarContenido('Antiguo')">Antiguo</a>
+        <a onclick="filtrarContenido('Fotos')">Fotos</a>
+        <a onclick="filtrarContenido('Videos')">Videos</a>
+    </div>
+    
+    <div id="contenido">
+        <div class="item" data-tipo="Fotos" data-fecha="2025-01-29">
+            <svg class="vertical" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4C6 3.44772 6.44772 3 7 3H17C17.5523 3 18 3.44772 18 4V18C18 18.5523 17.5523 19 17 19H7C6.44772 19 6 18.5523 6 18V4ZM7 1C5.34315 1 4 2.34315 4 4V20C4 21.6569 5.34315 23 7 23H17C18.6569 23 20 21.6569 20 20V4C20 2.34315 18.6569 1 17 1H7ZM12 22C12.5523 22 13 21.5523 13 21C13 20.4477 12.5523 20 12 20C11.4477 20 11 20.4477 11 21C11 21.5523 11.4477 22 12 22Z" fill="#000000"/>
+                </svg>
+            <img loading="lazy" src="7.png" data-imagen-grande="7.webp" alt="">
+        </div>
+        <div class="item" data-tipo="Fotos" data-fecha="2025-01-24">
+            <svg class="vertical" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4C6 3.44772 6.44772 3 7 3H17C17.5523 3 18 3.44772 18 4V18C18 18.5523 17.5523 19 17 19H7C6.44772 19 6 18.5523 6 18V4ZM7 1C5.34315 1 4 2.34315 4 4V20C4 21.6569 5.34315 23 7 23H17C18.6569 23 20 21.6569 20 20V4C20 2.34315 18.6569 1 17 1H7ZM12 22C12.5523 22 13 21.5523 13 21C13 20.4477 12.5523 20 12 20C11.4477 20 11 20.4477 11 21C11 21.5523 11.4477 22 12 22Z" fill="#000000"/>
+                </svg>
+            <img loading="lazy" src="2.png" data-imagen-grande="2.webp" alt="">
+        </div>
+        <div class="item" data-tipo="Fotos" data-fecha="2025-01-21">
+            <svg class="vertical" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4C6 3.44772 6.44772 3 7 3H17C17.5523 3 18 3.44772 18 4V18C18 18.5523 17.5523 19 17 19H7C6.44772 19 6 18.5523 6 18V4ZM7 1C5.34315 1 4 2.34315 4 4V20C4 21.6569 5.34315 23 7 23H17C18.6569 23 20 21.6569 20 20V4C20 2.34315 18.6569 1 17 1H7ZM12 22C12.5523 22 13 21.5523 13 21C13 20.4477 12.5523 20 12 20C11.4477 20 11 20.4477 11 21C11 21.5523 11.4477 22 12 22Z" fill="#000000"/>
+                </svg>
+            <img loading="lazy" src="3.png" data-imagen-grande="3.webp" alt="">
+        </div>
+        <div class="item" data-tipo="Fotos" data-fecha="2025-01-21">
+            <svg class="vertical" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4C6 3.44772 6.44772 3 7 3H17C17.5523 3 18 3.44772 18 4V18C18 18.5523 17.5523 19 17 19H7C6.44772 19 6 18.5523 6 18V4ZM7 1C5.34315 1 4 2.34315 4 4V20C4 21.6569 5.34315 23 7 23H17C18.6569 23 20 21.6569 20 20V4C20 2.34315 18.6569 1 17 1H7ZM12 22C12.5523 22 13 21.5523 13 21C13 20.4477 12.5523 20 12 20C11.4477 20 11 20.4477 11 21C11 21.5523 11.4477 22 12 22Z" fill="#000000"/>
+                </svg>
+            <img loading="lazy" src="1.png" data-imagen-grande="1.webp" alt="">
+        </div>
+        <div class="item" data-tipo="Fotos" data-fecha="2023-06-17">
+            <svg class="Horizontal" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4C2.34315 4 1 5.34315 1 7V17C1 18.6569 2.34315 20 4 20H20C21.6569 20 23 18.6569 23 17V7C23 5.34315 21.6569 4 20 4H4ZM3 7C3 6.44772 3.44772 6 4 6H18C18.5523 6 19 6.44772 19 7V17C19 17.5523 18.5523 18 18 18H4C3.44772 18 3 17.5523 3 17V7ZM21 13C21.5523 13 22 12.5523 22 12C22 11.4477 21.5523 11 21 11C20.4477 11 20 11.4477 20 12C20 12.5523 20.4477 13 21 13Z" fill="#000000"/>
+                </svg>
+            <img loading="lazy" src="4.png" data-imagen-grande="4.webp" alt="">
+            
+        </div>
+        <div class="item" data-tipo="Fotos" data-fecha="2023-06-17">
+            <svg class="vertical" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4C6 3.44772 6.44772 3 7 3H17C17.5523 3 18 3.44772 18 4V18C18 18.5523 17.5523 19 17 19H7C6.44772 19 6 18.5523 6 18V4ZM7 1C5.34315 1 4 2.34315 4 4V20C4 21.6569 5.34315 23 7 23H17C18.6569 23 20 21.6569 20 20V4C20 2.34315 18.6569 1 17 1H7ZM12 22C12.5523 22 13 21.5523 13 21C13 20.4477 12.5523 20 12 20C11.4477 20 11 20.4477 11 21C11 21.5523 11.4477 22 12 22Z" fill="#000000"/>
+                </svg>
+            <img loading="lazy" src="5.png" data-imagen-grande="5.webp" alt="">
+        </div>
+    </div>
+    
+    <div id="modal" class="modal">
+        <div class="loader"></div>
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img-grande" alt="">
+    </div>
+
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+
+
+<script>
+    function filtrarContenido(filtro) {
+    const items = document.querySelectorAll("#contenido .item");
+
+    items.forEach(item => {
+        const tipo = item.getAttribute("data-tipo");
+        const fecha = item.getAttribute("data-fecha");
+
+        // Mostrar todos los elementos si el filtro es "Todas"
+        if (filtro === "Todas" ||
+            (filtro === "Reciente" && fecha >= "2025-01-23") ||
+            (filtro === "Antiguo" && fecha < "2025-01-22") ||
+            (filtro === tipo)) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    });
+}
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("img-grande");
+const closeModal = document.querySelector(".close");
+const loader = document.querySelector(".loader");
+
+document.querySelectorAll("#contenido .item img").forEach((img) => {
+    img.addEventListener("click", () => {
+        const imagenGrande = img.getAttribute("data-imagen-grande");
+        modal.style.display = "flex"; // Mostrar modal
+        loader.style.display = "block"; // Mostrar loader
+        modalImg.style.display = "none"; // Ocultar imagen mientras carga
+
+        // Cargar la imagen de mayor calidad
+        modalImg.src = imagenGrande;
+        modalImg.onload = () => {
+            loader.style.display = "none"; // Ocultar loader
+            modalImg.style.display = "block"; // Mostrar imagen
+        };
+    });
+});
+
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalImg.src = ""; // Limpiar la imagen para evitar errores
+});
+
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
+        modal.style.display = "none";
+        modalImg.src = ""; // Limpiar la imagen
+    }
+});
+
+  const audio = new Audio("Beanie.mp3");"ruta_de_tu_musica.mp3"
+
+  const playButton = document.querySelector(".Play");
+  const pauseButton = document.querySelector(".Pause");
+
+  playButton.addEventListener("click", () => {
+    audio.play(); // Reproducir la música
+    playButton.style.display = "none"; // Ocultar el botón de reproducir
+    pauseButton.style.display = "inline-block"; // Mostrar el botón de pausar
+  });
+
+  pauseButton.addEventListener("click", () => {
+    audio.pause(); // Pausar la música
+    pauseButton.style.display = "none"; // Ocultar el botón de pausar
+    playButton.style.display = "inline-block"; // Mostrar el botón de reproducir
+  });
+</script>
+
 </html>
