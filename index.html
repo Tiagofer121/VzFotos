@@ -67,34 +67,38 @@ h5.Nombre {
     letter-spacing: 2px;
 }
 a.Fotos {
-    display: flex
-;
+    display: flex;
     color: rgb(255, 255, 255);
     background: #1d1c1c;
     width: 60px;
     align-items: center;
     padding: 3px 0px;
     border-radius: 20px;
+    width: 60px;
+    height: 27px;
     margin: 0px 10px 0px 0px;
+    justify-content: center;
 }
 svg.svg-camara {
-    width: 20px;
-    height: 20px;
-    margin: 0px 5px 0px 10px;
+    width: 15px;
+    height: 15px;
+    margin: 0px 5px 0px 0px;
 }
 .fotos-videos-botones {
     display: flex;
     font-family:'TipoTiago' ;
 }
 a.Videos {
-    display: flex
-;
+    display: flex;
     color: rgb(255, 255, 255);
     background: #1d1c1c;
     width: 60px;
     align-items: center;
     padding: 3px 0px;
     border-radius: 20px;
+    width: 60px;
+    height: 27px;
+    justify-content: center;
 }
 h5.descripcion {
     margin: 60px 0px 0px 0px;
@@ -141,6 +145,13 @@ div#contenido {
     height: auto;
 }
 .item img {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    object-fit: cover;
+
+}
+.item video {
     width: 100%;
     height: 100%;
     padding: 10px;
@@ -219,7 +230,7 @@ button, a, input {
     color: white;
     padding: 5px 5px;
     border-radius: 15px;
-    background: linear-gradient(114deg, #b2aea2, #151212);
+    background: linear-gradient(153deg, #dcb4bf 50%, #d5b952);
     margin: 0px 10px;
     justify-content: space-between;
 }
@@ -233,10 +244,9 @@ button, a, input {
     color: white;
     padding: 5px 5px;
     border-radius: 10px;
-    background: linear-gradient(14deg, #00215e, #00081c);
+    background: linear-gradient(15deg, #dcb4bf 50%, #d5b952);
     margin: 10px 10px;
     justify-content: space-between;
-    display: none;
 }
 img.poster-musica {
     width: 55px;
@@ -458,10 +468,10 @@ fill: white;
     <div class="musica">
         <div class="musica-contenedor">
         <div class="foto-perfil-musica">
-            <img src="https://t2.genius.com/unsafe/412x412/https%3A%2F%2Fimages.genius.com%2F98635c01146e2c911b8f4cfbd3361e1a.1000x1000x1.png" alt="" class="poster-musica">
+            <img src="https://t2.genius.com/unsafe/412x412/https%3A%2F%2Fimages.genius.com%2Fa4af721758b67745a66042a5dcf45c83.1000x1000x1.png" alt="" class="poster-musica">
            <div>
-            <p class="titulo-musica-p">Beanie</p>
-                <p class="cantante">Chezile <span class="album">-  47 </span></p>
+            <p class="titulo-musica-p">Robert De Niro</p>
+                <p class="cantante">Mora <span class="album">-  Microdosia </span></p>
             </div>
         </div>
         <div class="play">
@@ -478,7 +488,7 @@ fill: white;
 
     <div class="musica">
         <div class="Letra-contenedor">
-            <p class="letras-p">Te perdí a ti y perdí mi alma</p>
+            <p class="letras-p">Tú va' a ser mejor que yo el día que yo no respire            </p>
     </div>
     </div>
 
@@ -491,6 +501,18 @@ fill: white;
     </div>
     
     <div id="contenido">
+        <div class="item" data-tipo="Video" data-fecha="2025-02-5">
+            <svg class="Horizontal" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4C2.34315 4 1 5.34315 1 7V17C1 18.6569 2.34315 20 4 20H20C21.6569 20 23 18.6569 23 17V7C23 5.34315 21.6569 4 20 4H4ZM3 7C3 6.44772 3.44772 6 4 6H18C18.5523 6 19 6.44772 19 7V17C19 17.5523 18.5523 18 18 18H4C3.44772 18 3 17.5523 3 17V7ZM21 13C21.5523 13 22 12.5523 22 12C22 11.4477 21.5523 11 21 11C20.4477 11 20 11.4477 20 12C20 12.5523 20.4477 13 21 13Z" fill="#000000"/>
+            </svg>
+            <img loading="lazy" src="9.png" data-video="9.mov" alt="">
+        </div>
+        <div class="item" data-tipo="Fotos" data-fecha="2025-02-5">
+            <svg class="Horizontal" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4 4C2.34315 4 1 5.34315 1 7V17C1 18.6569 2.34315 20 4 20H20C21.6569 20 23 18.6569 23 17V7C23 5.34315 21.6569 4 20 4H4ZM3 7C3 6.44772 3.44772 6 4 6H18C18.5523 6 19 6.44772 19 7V17C19 17.5523 18.5523 18 18 18H4C3.44772 18 3 17.5523 3 17V7ZM21 13C21.5523 13 22 12.5523 22 12C22 11.4477 21.5523 11 21 11C20.4477 11 20 11.4477 20 12C20 12.5523 20.4477 13 21 13Z" fill="#000000"/>
+                </svg>
+            <img loading="lazy" src="8.png" data-imagen-grande="8.webp" alt="">
+        </div>
         <div class="item" data-tipo="Fotos" data-fecha="2025-01-29">
             <svg class="vertical" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4C6 3.44772 6.44772 3 7 3H17C17.5523 3 18 3.44772 18 4V18C18 18.5523 17.5523 19 17 19H7C6.44772 19 6 18.5523 6 18V4ZM7 1C5.34315 1 4 2.34315 4 4V20C4 21.6569 5.34315 23 7 23H17C18.6569 23 20 21.6569 20 20V4C20 2.34315 18.6569 1 17 1H7ZM12 22C12.5523 22 13 21.5523 13 21C13 20.4477 12.5523 20 12 20C11.4477 20 11 20.4477 11 21C11 21.5523 11.4477 22 12 22Z" fill="#000000"/>
@@ -522,18 +544,14 @@ fill: white;
             <img loading="lazy" src="4.png" data-imagen-grande="4.webp" alt="">
             
         </div>
-        <div class="item" data-tipo="Fotos" data-fecha="2023-06-17">
-            <svg class="vertical" xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 24 24" fill="none">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 4C6 3.44772 6.44772 3 7 3H17C17.5523 3 18 3.44772 18 4V18C18 18.5523 17.5523 19 17 19H7C6.44772 19 6 18.5523 6 18V4ZM7 1C5.34315 1 4 2.34315 4 4V20C4 21.6569 5.34315 23 7 23H17C18.6569 23 20 21.6569 20 20V4C20 2.34315 18.6569 1 17 1H7ZM12 22C12.5523 22 13 21.5523 13 21C13 20.4477 12.5523 20 12 20C11.4477 20 11 20.4477 11 21C11 21.5523 11.4477 22 12 22Z" fill="#000000"/>
-                </svg>
-            <img loading="lazy" src="5.png" data-imagen-grande="5.webp" alt="">
-        </div>
+
     </div>
     
     <div id="modal" class="modal">
         <div class="loader"></div>
         <span class="close">&times;</span>
         <img class="modal-content" id="img-grande" alt="">
+        <video class="modal-content" id="video-grande" controls autoplay style="display: none;"></video>
     </div>
 
 </body>
@@ -552,8 +570,8 @@ fill: white;
 
         // Mostrar todos los elementos si el filtro es "Todas"
         if (filtro === "Todas" ||
-            (filtro === "Reciente" && fecha >= "2025-01-23") ||
-            (filtro === "Antiguo" && fecha < "2025-01-22") ||
+            (filtro === "Reciente" && fecha >= "2025-02-5") ||
+            (filtro === "Antiguo" && fecha < "2025-01-30") ||
             (filtro === tipo)) {
             item.style.display = "block";
         } else {
@@ -561,6 +579,31 @@ fill: white;
         }
     });
 }
+document.querySelectorAll('.item').forEach(item => {
+        item.addEventListener('click', () => {
+            const modal = document.getElementById("modal");
+            const imgGrande = document.getElementById("img-grande");
+            const videoGrande = document.getElementById("video-grande");
+            const imagen = item.querySelector('img');
+
+            if (imagen.dataset.imagenGrande) {
+                imgGrande.src = imagen.dataset.imagenGrande;
+                imgGrande.style.display = "flex";
+                videoGrande.style.display = "none";
+            } else if (imagen.dataset.video) {
+                videoGrande.src = imagen.dataset.video;
+                videoGrande.style.display = "flex";
+                imgGrande.style.display = "none";
+            }
+
+            modal.style.display = "flex";
+        });
+    });
+
+    document.querySelector(".close").addEventListener("click", () => {
+        document.getElementById("modal").style.display = "none";
+        document.getElementById("video-grande").pause();
+    });
 const modal = document.getElementById("modal");
 const modalImg = document.getElementById("img-grande");
 const closeModal = document.querySelector(".close");
@@ -594,7 +637,7 @@ modal.addEventListener("click", (e) => {
     }
 });
 
-  const audio = new Audio("Beanie.mp3");"ruta_de_tu_musica.mp3"
+  const audio = new Audio("robertdeniro.mp3");"ruta_de_tu_musica.mp3"
 
   const playButton = document.querySelector(".Play");
   const pauseButton = document.querySelector(".Pause");
